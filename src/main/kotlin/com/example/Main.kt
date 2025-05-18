@@ -12,6 +12,9 @@ class A2AKotlinApp
 fun main(args: Array<String>) {
     runApplication<A2AKotlinApp>(*args)
     var client = LocalA2ATaskClient()
+    //this is to test how it works locally and to infuse ai in kotlin based app
     var response= client.sendTask("hows the weather in London");
     println("Response: $response")
+    println("starting the server")
+    //the server will start now
 }
