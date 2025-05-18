@@ -16,10 +16,14 @@ The Agent-to-Agent (A2A) protocol is a standardized way for software agents to c
 This project includes:
 
 - `WeatherAgent`: A sample agent that provides weather information
+- `RoutePlanner`: A sample agent that provides route planning services
 - Spring Boot integration for running the agent service
 - Local and remote client support for agent communication
 
 ## Implementation Details
+
+ You can start the server with main.kt and then connect your client using the 
+url `localhost:8080`   , the agent card will be avaiable at `http://localhost:8080/.well-known/agent.json`
 
 ### Weather Agent Implementation
 
