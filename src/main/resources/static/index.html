@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2A Kotlin Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #7F52FF;  /* Kotlin's brand color */
+            --secondary-color: #27282C;
+            --accent-color: #52FFDE;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .screenshot {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin: 1.5rem 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .code-block {
+            background: var(--secondary-color);
+            color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .btn-kotlin {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-kotlin:hover {
+            background-color: #6B44D8;
+            transform: translateY(-2px);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">A2A & MCP Protocol Demo in Kotlin</h1>
+            <p class="lead mb-4">Experience the power of Agent-to-Agent communication with Kotlin's elegant syntax and modern features.</p>
+            <a href="https://vishalmysore-a2amcpkotlin.hf.space/.well-known/agent.json" class="btn btn-kotlin me-3">
+                <i class="fas fa-robot me-2"></i>View Agent Card
+            </a>
+            <a href="https://vishalmysore-a2amcpkotlin.hf.space/" class="btn btn-outline-light">
+                <i class="fas fa-play-circle me-2"></i>Live Demo
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h3 class="mb-4">Why Kotlin for A2A & MCP?</h3>
+                    <ul class="feature-list">
+                        <li>Coroutines for elegant async programming</li>
+                        <li>Built-in serialization for JSON handling</li>
+                        <li>Powerful reflection capabilities</li>
+                        <li>Expressive DSLs for complex objects</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="add_agent.png" alt="Adding an A2A Agent" class="screenshot">
+            </div>
+        </div>
+
+        <div class="section mb-5">
+            <h2 class="mb-4">About a2ajava</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <p>Built on <a href="https://github.com/vishalmysore/a2ajava" target="_blank" class="highlight text-decoration-none">a2ajava</a>, 
+                        this framework simplifies agent development with:</p>
+                        <ul class="feature-list">
+                            <li>Protocol-agnostic architecture</li>
+                            <li>Multi-language support</li>
+                            <li>Platform independence</li>
+                            <li>Built-in integration tools</li>
+                            <li>Active community support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="chat.png" alt="Agent Chat Interface" class="screenshot">
+                </div>
+            </div>
+        </div>
+
+        <div class="section mb-5">
+            <h2 class="mb-4">Agent Interactions</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="chat2.png" alt="Extended Agent Chat" class="screenshot">
+                </div>
+                <div class="col-md-6">
+                    <img src="events.png" alt="Event Monitoring" class="screenshot">
+                </div>
+            </div>
+        </div>
+
+        <div class="section mb-5">
+            <h2 class="mb-4">MCP Tools Integration</h2>
+            <div class="code-block">
+                <pre><code>curl -H "Content-Type: application/json" -d '{
+"jsonrpc": "2.0",
+"method": "tools/list",
+"params": {},
+"id": 1
+}'</code></pre>
+            </div>
+
+            <div class="code-block">
+                <pre><code>"weatheragent": {
+"command": "java",
+"args": [
+    "-jar",
+    "/work/a2a-mcp-bridge/target/mcp-connector-full.jar",
+    "http://localhost:7860/"
+],
+"timeout": 30000
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>A2A Kotlin Demo</h5>
+                    <p>Built with ❤️ using Kotlin and Spring Boot</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://github.com/vishalmysore/a2ajava" class="text-light me-3">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://vishalmysore-a2amcpkotlin.hf.space/" class="text-light">
+                        <i class="fas fa-globe"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

@@ -16,13 +16,14 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("io.github.vishalmysore:a2ajava:0.0.7.9"){
+    implementation("io.github.vishalmysore:a2ajava:0.1.8.2"){
 
             exclude(group = "io.swagger.core.v3", module = "swagger-core")
             exclude(group = "io.swagger.core.v3", module = "swagger-core-jakarta")
             exclude(group = "io.swagger.parser.v3", module = "swagger-parser")
 
     }
+    implementation("io.github.vishalmysore:tools4ai-annotations:0.0.2")
     implementation("org.springframework.boot:spring-boot-starter:3.4.5")
     implementation("org.apache.httpcomponents.client5:httpclient5") // no version
     implementation("org.springframework.boot:spring-boot-starter-web")

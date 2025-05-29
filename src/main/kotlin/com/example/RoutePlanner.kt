@@ -26,6 +26,6 @@ class RoutePlanner {
     @Action(description = "Shows nearby locations of specified type")
     fun findNearbyPlaces(location: String, placeType: String, radius: Double): String {
         // Simulated response for demonstration
-        return "Found nearby $placeType locations around $location within $radius miles"
+        return "Found nearby Cafe Cofee Day as  $placeType locations around $location within $radius miles"
     }
 }
